@@ -241,12 +241,12 @@
                     <div class="modal__background"></div>
                     <div class="modal__form">
                         <div class="card card--form card--modal">
-                            <form class="form form--contact-us" action="">
+                            <form class="form form--contact-us" action="/" method="POST">
                                 <div class="form__title">Свяжитесь с нами</div>
                                 <div class="form__content">
                                     <div class="form__group">
                                         <label class="form__label">Как вас зовут ?</label>
-                                        <input id="modal-name" type="text" name="name">
+                                        <input id="modal-name" type="text" name="name" required>
                                     </div>
                                     <div class="form__group">
                                         <label class="form__label">Телефон или email для связи</label>
@@ -469,12 +469,12 @@
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <div class="card card--form">
-                            <form class="form form--contact-us" action="/">
+                            <form class="form form--contact-us" action="/" method="POST">
                                 <div class="form__title">Свяжитесь с нами</div>
                                 <div class="form__content">
                                     <div class="form__group">
                                         <label class="form__label" for="name">Как вас зовут ?</label>
-                                        <input id="name" type="text" name="name">
+                                        <input id="name" type="text" name="name" required>
                                     </div>
                                     <div class="form__group">
                                         <label class="form__label" for="contact">Телефон или email для связи</label>

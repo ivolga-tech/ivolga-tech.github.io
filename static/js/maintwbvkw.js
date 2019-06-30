@@ -92,3 +92,31 @@ if (input) {
         }
     });
 }
+
+Array.prototype.slice.call(document.getElementsByClassName('form--contact-us')).forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+        var submitBtn = form.getElementsByClassName('btn--lg')[0];
+        var submitHTML = submitBtn.innerHTML;
+        var data = new FormData(this);
+        var req = new XMLHttpRequest();
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Отправка...';
+        req.open('POST', 'https://getsimpleform.com/messages?form_api_token=b70bcfd85d264a9132974c6c0a001631', true);
+        req.setRequestHeader('Accept', 'application/json');
+        req.onload = function() {
+            setTimeout(function() {
+                submitBtn.innerHTML = submitHTML;
+                submitBtn.disabled = false;
+            }, 3000);
+            var resp = JSON.parse(req.response);
+            if (req.status === 200) {
+                submitBtn.innerHTML = 'Отправлено';
+            } else {
+                submitBtn.innerHTML = 'Ошибка, см. консоль';
+                console.log(resp);
+            }
+        };
+        req.send(data);
+        event.preventDefault();
+    }, false);
+});

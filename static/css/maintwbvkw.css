@@ -273,6 +273,7 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
   cursor: default;
+  color: rgba(0, 0, 0, .4);
 }
 
 /**

@@ -241,12 +241,12 @@
                     <div class="modal__background"></div>
                     <div class="modal__form">
                         <div class="card card--form card--modal">
-                            <form class="form form--contact-us" action="">
+                            <form class="form form--contact-us" action="/" method="POST">
                                 <div class="form__title">Свяжитесь с нами</div>
                                 <div class="form__content">
                                     <div class="form__group">
                                         <label class="form__label">Как вас зовут ?</label>
-                                        <input id="modal-name" type="text" name="name">
+                                        <input id="modal-name" type="text" name="name" required>
                                     </div>
                                     <div class="form__group">
                                         <label class="form__label">Телефон или email для связи</label>
@@ -396,12 +396,12 @@
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <div class="card card--form">
-                                <form class="form form--contact-us" action="/" enctype="multipart/form-data">
+                                <form class="form form--contact-us" action="/" method="POST" enctype="multipart/form-data">
                                     <div class="form__title">Свяжитесь с нами</div>
                                     <div class="form__content">
                                         <div class="form__group">
                                             <label class="form__label" for="name">Имя</label>
-                                            <input id="name" type="text" name="name">
+                                            <input id="name" type="text" name="name" required>
                                         </div>
                                         <div class="form__group">
                                             <label class="form__label" for="city">Город</label>
@@ -409,7 +409,7 @@
                                         </div>
                                         <div class="form__group">
                                             <label class="form__label" for="email">Email</label>
-                                            <input id="email" type="text" name="email">
+                                            <input id="email" type="email" name="email">
                                         </div>
                                         <div class="form__group">
                                             <label class="form__label" for="phone">Телефон</label>

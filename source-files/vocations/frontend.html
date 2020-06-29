@@ -15,18 +15,18 @@
         <!--[if (gt IE 9)|!(IE)]><!-->
         <link href="../static/css/maintwbvkw.min.css" rel="stylesheet" type="text/css">
         <!--<![endif]-->
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/source-files/favicon-16x16.pngcon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/source-files/favicon-32x32.pngcon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/source-files/favicon-96x96.pngcon-96x96.png">
         <link rel="icon" type="image/png" sizes="196x196" href="/favicon-196x196.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="/source-files/apple-touch-icon-57x57.pngcon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/source-files/apple-touch-icon-60x60.pngcon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/source-files/apple-touch-icon-72x72.pngcon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/source-files/apple-touch-icon-76x76.pngcon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/source-files/apple-touch-icon-114x114.pngn-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/source-files/apple-touch-icon-120x120.pngn-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/source-files/apple-touch-icon-144x144.pngn-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/source-files/apple-touch-icon-152x152.pngn-152x152.png">
         <script>
             (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
         </script>
@@ -268,11 +268,11 @@
                     <ul class="list list--top-menu">
                         <li class="list__item"><a class="list__link" href="/">Главная</a>
                         </li>
-                        <li class="list__item is-active"><a class="list__link" href="/portfolio.html">Портфолио</a>
+                        <li class="list__item"><a class="list__link" href="/source-files/portfolio.htmlortfolio.html">Портфолио</a>
                         </li>
-                        <li class="list__item"><a class="list__link" href="/vocations.html">Вакансии</a>
+                        <li class="list__item is-active"><a class="list__link" href="/source-files/vocations.htmlocations.html">Вакансии</a>
                         </li>
-                        <li class="list__item"><a class="list__link" href="/contacts.html">Контакты</a>
+                        <li class="list__item"><a class="list__link" href="/source-files/contacts.htmlcontacts.html">Контакты</a>
                         </li>
                     </ul>
                     <div class="btn btn--yellow"><a class="list__link" id="modal-open" href="#">Связаться</a>
@@ -306,54 +306,147 @@
 
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project__card">
-                        <div class="card card--header mt-40 card--lighgrey">
-                            <div class="card__img no-border">
+                <div class="vocation">
+                    <div class="vocation__card">
+                        <div class="card card--header mt-40">
+                            <div class="card__img">
+                                <svg class="icon icon--frontend" width="80px" height="80px">
+                                    <use xlink:href="#frontend"></use>
+                                </svg>
+
                             </div>
                             <div class="card__content">
-                                <div class="card__title">Игры для социальных сетей</div>
-                                <div class="card__desc">Общалка-трещалка, Мафия-рулетка,  JackPot Club, Мафия Блиц</div>
+                                <div class="card__title">Frontend разработчик</div>
+                                <div class="card__meta">
+                                    <div class="card__meta-title">Вакансия</div>
+                                    <ul class="list list--meta list--icon">
+                                        <li class="list__item">JavaScript</li>
+                                        <li class="list__item">HTML</li>
+                                        <li class="list__item">CSS</li>
+                                        <li class="list__item">Git</li>
+                                        <li class="list__item">CSS</li>
+                                        <li class="list__item">Angular</li>
+                                        <li class="list__item">Адаптивная верстка</li>
+                                    </ul>
+                                </div>
+                                <div class="card__desc">Мы ищем зрелого frontend-разработчика в проект по разработке programmatic-платформы для наружной рекламы. Мы создаем продукт, использующий на фронтенде связку TypeScript/Angular2+</div>
                             </div>
                         </div>
                     </div>
-                    <div class="project__block mt-100">
-                        <div class="block">
-                            <div class="block__title">
-                                <h2>Об играх</h2>
-                            </div>
-                            <div class="block__subtitle">
-Разработка качественного игрового приложения - это всегда вызов. Это - сложный  UI с анимациями, оптимизация под высокие нагрузки, нестандартная бизнес-логика и выкатывание релизов к Новому году или 14-му февраля. Совместно с игровой компанией   Slash Dots  мы выпустили 4 игры, две из которых стали по-настоящему успешными. Это приложение для знакомств и флирта <a href="https://vk.com/app3651227_1459907">Общалка-трещалка</a> и карточная игра  <a href="https://vk.com/app4660381_1459907">Мафия-Рулетка</a>. Последняя, кстати, четыре раза удостаивалась звания "Выбор редакции Вконтакте".    
+                    <div class="vocation__list">
+                        <div class="list list--styled">
+                            <div class="list__title">Требования к кандидату</div>
+                            <ul class="list__content">
+                                <li class="list__item">Мы ищем специалиста с опытом разработки от 4-5 лет.</li>
+                                <li class="list__item">Отличное владение JavaScript (ES5/ES6/ES7) и HTML/CSS, опыт работы с другими языками фронтенда (CoffeScript, TypeScript, ClojueScript) будет плюсом</li>
+                                <li class="list__item">Опыт работы минимум с одним компонентным фреймворком (Angular2, React, Vue.js и тп)</li>
+                                <li class="list__item">Знание TypeScript очень желательна, но не является обязательным, важнее общая культура и опыт в разработке сложного фронтенда</li>
+                                <li class="list__item">Уверенное владение git</li>
+                                <li class="list__item">Понимание, как работает backend</li>
+                                <li class="list__item">Готовность быстро освоить новые технологии</li>
+                            </ul>
+                        </div>
+                        <div class="list list--styled">
+                            <div class="list__title">Что вы получите взамен</div>
+                            <ul class="list__content">
+                                <li class="list__item">Небольшая и дружная команда, отсутствие бюрократии</li>
+                                <li class="list__item">Опыт разработки продукта направленного на международный рынок</li>
+                                <li class="list__item">Посещение профильных мероприятий, конференций за счет компании</li>
+                                <li class="list__item">Регулярный пересмотр заработной платы по итогам оценки</li>
+                                <li class="list__item">Отсутствие излишней бюрократии в команде и процессах</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row mt-100">
+                        <div class="col-xs-12 col-md-6">
+                            <section class="section section--info">
+                                <div class="section__title">
+                                    <h2>Хотите попасть в команду?</h2>
+                                </div>
+                                <div class="section__subtitle">Оставьте свои контактные данные и мы свяжемся с вами.</div>
+                                <div class="section__content">
+                                    <ul class="list list--contacts">
+                                        <li class="list__item"><span>Телефон:</span>8 920 6432721</li>
+                                        <li class="list__item"><span>Email:</span>info@ivolga.tech</li>
+                                        <li class="list__item"><span>Адрес:</span>Кострома, ул. Нижняя Дебря 70</li>
+                                    </ul>
+                                    <ul class="list list--social-links">
+                                        <li class="list__item vk">
+                                            <a href="/">
+                                                <svg class="icon icon--vk" width="18px" height="10px">
+                                                    <use xlink:href="#icon-vk"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="list__item tw">
+                                            <a href="/">
+                                                <svg class="icon icon--tw" width="17px" height="14px">
+                                                    <use xlink:href="#icon-tw"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="list__item fb-sm">
+                                            <a href="/">
+                                                <svg class="icon icon--fb-sm" width="9px" height="20px">
+                                                    <use xlink:href="#icon-fb-sm"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="card card--form">
+                                <form class="form form--contact-us" action="/" method="POST" enctype="multipart/form-data">
+                                    <div class="form__title">Свяжитесь с нами</div>
+                                    <div class="form__content">
+                                        <div class="form__group">
+                                            <label class="form__label" for="name">Имя</label>
+                                            <input id="name" type="text" name="name" required>
+                                        </div>
+                                        <div class="form__group">
+                                            <label class="form__label" for="city">Город</label>
+                                            <input id="city" type="text" name="city">
+                                        </div>
+                                        <div class="form__group">
+                                            <label class="form__label" for="email">Email</label>
+                                            <input id="email" type="email" name="email">
+                                        </div>
+                                        <div class="form__group">
+                                            <label class="form__label" for="phone">Телефон</label>
+                                            <input id="phone" type="text" name="phone">
+                                        </div>
+                                        <div class="form__group">
+                                            <label class="form__label" for="info">О себе</label>
+                                            <textarea id="info" name="info" cols="30" rows="3"></textarea>
+                                        </div>
+                                        <div class="form__file">
+                                            <input class="inputfile no-file" id="file-2" type="file" name="file-2">
+                                            <div class="label">
+                                                <div class="label-icon">
+                                                    <svg class="icon icon--file" width="24px" height="24px">
+                                                        <use xlink:href="#file"></use>
+                                                    </svg>
 
+                                                </div>
+                                                <label for="file-2"><span>Добавить файл</span>
+                                                </label>
+                                                <div class="label-remove">
+                                                    <svg class="icon icon--remove" width="10px" height="10px">
+                                                        <use xlink:href="#icon-remove"></use>
+                                                    </svg>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__footer">
+                                        <button class="btn btn--lg btn--yellow" id="send-message" type="submit">Отправить</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-<div class="row row--out mt-40">
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/games-1.jpg" alt="Игры" title="Игры">
-                                    </div>
-                                </div>
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/games-2.jpg" alt="Игры" title="Игры">
-                                    </div>
-                                </div>
-                            </div>
-
-<div class="row row--out mt-40">
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/games-3.png" alt="Игры" title="Игры">
-                                    </div>
-                                </div>
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/games-4.png" alt="Игры" title="Игры">
-                                    </div>
-                                </div>
-                            </div>
-
                     </div>
                 </div>
             </div>
@@ -363,15 +456,13 @@
                 <ul class="list list--menu-page">
                     <li class="list__item"><a class="list__link" href="/">Главная</a>
                     </li>
-                    <li class="list__item is-active"><a class="list__link" href="/portfolio.html">Портфолио</a>
+                    <li class="list__item"><a class="list__link" href="/source-files/portfolio.htmlortfolio.html">Портфолио</a>
                     </li>
-                    <li class="list__item"><a class="list__link" href="/vocations.html">Вакансии</a>
+                    <li class="list__item is-active"><a class="list__link" href="/source-files/vocations.htmlocations.html">Вакансии</a>
                     </li>
-                    <li class="list__item"><a class="list__link" href="/contacts.html">Контакты</a>
+                    <li class="list__item"><a class="list__link" href="/source-files/contacts.htmlcontacts.html">Контакты</a>
                     </li>
-                    <li class="list__item"><a class="list__link" href="/contacts.html">Контакты</a>
-                    </li>
-              </ul>
+                </ul>
                 <section class="section section--info section--menu-page">
                     <div class="section__content">
                         <ul class="list list--contacts list--menu-page-contacts">

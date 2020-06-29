@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Заголовок страницы</title>
+        <title>Вакансии</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +13,20 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
 
         <!--[if (gt IE 9)|!(IE)]><!-->
-        <link href="../static/css/maintwbvkw.min.css" rel="stylesheet" type="text/css">
+        <link href="static/css/maintwbvkw.min.css" rel="stylesheet" type="text/css">
         <!--<![endif]-->
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/source-files/favicon-16x16.pngcon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/source-files/favicon-32x32.pngcon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/source-files/favicon-96x96.pngcon-96x96.png">
         <link rel="icon" type="image/png" sizes="196x196" href="/favicon-196x196.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="/source-files/apple-touch-icon-57x57.pngcon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/source-files/apple-touch-icon-60x60.pngcon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/source-files/apple-touch-icon-72x72.pngcon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/source-files/apple-touch-icon-76x76.pngcon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/source-files/apple-touch-icon-114x114.pngn-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/source-files/apple-touch-icon-120x120.pngn-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/source-files/apple-touch-icon-144x144.pngn-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/source-files/apple-touch-icon-152x152.pngn-152x152.png">
         <script>
             (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
         </script>
@@ -268,11 +268,11 @@
                     <ul class="list list--top-menu">
                         <li class="list__item"><a class="list__link" href="/">Главная</a>
                         </li>
-                        <li class="list__item is-active"><a class="list__link" href="/portfolio.html">Портфолио</a>
+                        <li class="list__item"><a class="list__link" href="/source-files/portfolio.htmlortfolio.html">Портфолио</a>
                         </li>
-                        <li class="list__item"><a class="list__link" href="/vocations.html">Вакансии</a>
+                        <li class="list__item is-active"><a class="list__link" href="/source-files/vocations.html">Вакансии</a>
                         </li>
-                        <li class="list__item"><a class="list__link" href="/contacts.html">Контакты</a>
+                        <li class="list__item"><a class="list__link" href="/source-files/contacts.htmlcontacts.html">Контакты</a>
                         </li>
                     </ul>
                     <div class="btn btn--yellow"><a class="list__link" id="modal-open" href="#">Связаться</a>
@@ -306,59 +306,109 @@
 
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project__card">
-                        <div class="card card--header mt-40 card--lighgrey">
-                            <div class="card__img no-border">
-<img src="../static/img/content/radiostator-logo.png" alt="Radiostator" title="Radiostator">
+                <section class="section section--icon-cards">
+                    <div class="section__title">
+                        <h2>Вакансии</h2>
+                    </div>
+                    <div class="section__subtitle"><span>Интересных проектов становится больше, и наша команда продолжает расти. Если не нашли подходящую вакансию — </span><a href="/">пишите</a><span>.</span>
+                    </div>
+                    <div class="section__content box">
+                        <div class="row">
+                            <div class="row__col col-xs-12 col-sm-6 col-md-4">
+                                <!-- START card-->
+                                <div class="card card--icon" data-link="/vocations/backend.html" data-toggle="link" title="Заголовок">
+                                    <div class="card__img">
+                                        <svg class="icon icon--backend" width="64px" height="80px">
+                                            <use xlink:href="#backend"></use>
+                                        </svg>
+
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="card__title">Бекенд</div>
+                                        <div class="card__meta">
+                                            <ul class="list list--meta list--icon">
+                                                <li class="list__item">Python</li>
+                                                <li class="list__item">Linux</li>
+                                                <li class="list__item">PostgreSQL</li>
+                                                <li class="list__item">Golang</li>
+                                                 <li class="list__item">Git</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card__action">
+                                            <svg class="icon icon--forward" width="19px" height="16px">
+                                                <use xlink:href="#icon-forward"></use>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END card-->
                             </div>
-                            <div class="card__content">
-                                <div class="card__title">Radiostator</div>
-                                <div class="card__desc">Мобильное приложение для прослушивания радио онлайн</div>
+                            <div class="row__col col-xs-12 col-sm-6 col-md-4">
+                                <!-- START card-->
+                                <div class="card card--icon" data-link="/vocations/frontend.html" data-toggle="link" title="Фронтенд">
+                                    <div class="card__img">
+                                        <svg class="icon icon--frontend" width="80px" height="80px">
+                                            <use xlink:href="#frontend"></use>
+                                        </svg>
+
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="card__title">Фронтенд</div>
+                                        <div class="card__meta">
+                                            <ul class="list list--meta list--icon">
+                                                <li class="list__item">JavaScript</li>
+                                                <li class="list__item">HTML</li>
+                                                <li class="list__item">CSS</li>
+                                                <li class="list__item">Git</li>
+                                                <li class="list__item">CSS</li>
+                                                <li class="list__item">Angular</li>
+                                                <li class="list__item">Адаптивная верстка</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card__action">
+                                            <svg class="icon icon--forward" width="19px" height="16px">
+                                                <use xlink:href="#icon-forward"></use>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END card-->
                             </div>
+
+                            <div class="row__col col-xs-12 col-sm-6 col-md-4">
+                                <!-- START card-->
+                                <div class="card card--icon" data-link="/vocations/qa.html" data-toggle="link" title="Заголовок">
+                                    <div class="card__img">
+                                        <svg class="icon icon--test" width="80px" height="77px">
+                                            <use xlink:href="#test"></use>
+                                        </svg>
+
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="card__title">Тестировщик/QA</div>
+                                        <div class="card__meta">
+                                            <ul class="list list--meta list--icon">
+                                                <li class="list__item">Тестирование ПО</li>
+                                                <li class="list__item">Контроль качества</li>
+                                                <li class="list__item">Функциональное тестирование</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card__action">
+                                            <svg class="icon icon--forward" width="19px" height="16px">
+                                                <use xlink:href="#icon-forward"></use>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END card-->
+                            </div>
+
                         </div>
                     </div>
-                    <div class="project__block mt-100">
-                        <div class="block">
-                            <div class="block__title">
-                                <h2>О проекте</h2>
-                            </div>
-                            <div class="block__subtitle">
-                            Мы любим делать простые и понятные приложения для людей.   <a href="https://www.radiostator.com">Radiostator.com</a> - один из таких проектов. Это мобильное приложение для планшетов и смартфонов под Android,  позволяющее прослушивать в режиме онлайн более 45 тысяч радиостанций по всему миру. 
-<p/>
-Включает поиск радиостанций по странам и городам, имеет удобный классификатор   по жанрам, а также функции режима сна и будильник. 
-
-                            </div>
-                        </div>
-
-<div class="row row--out mt-40">
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/radiostator-1.png" alt="Radiostator" title="Radiostator">
-                                    </div>
-                                </div>
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/radiostator-2.png" alt="Radiostator" title="Radiostator">
-                                    </div>
-                                </div>
-                            </div>
-
-<div class="row row--out mt-40">
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/radiostator-3.png" alt="Radiostator" title="Radiostator">
-                                    </div>
-                                </div>
-                                <div class="block block--img block--img-440 col-xs-12 col-sm-6">
-                                    <div class="block__img">
-                                        <img src="../static/img/content/radiostator-4.png" alt="Radiostator" title="Radiostator">
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-                </div>
+                </section>
             </div>
             <!-- END page content-->
             <!-- START MENU PAGE-->
@@ -366,15 +416,13 @@
                 <ul class="list list--menu-page">
                     <li class="list__item"><a class="list__link" href="/">Главная</a>
                     </li>
-                    <li class="list__item is-active"><a class="list__link" href="/portfolio.html">Портфолио</a>
+                    <li class="list__item"><a class="list__link" href="/source-files/portfolio.htmlortfolio.html">Портфолио</a>
                     </li>
-                    <li class="list__item"><a class="list__link" href="/vocations.html">Вакансии</a>
+                    <li class="list__item is-active"><a class="list__link" href="/source-files/vocations.html">Вакансии</a>
                     </li>
-                    <li class="list__item"><a class="list__link" href="/contacts.html">Контакты</a>
+                    <li class="list__item"><a class="list__link" href="/source-files/contacts.htmlcontacts.html">Контакты</a>
                     </li>
-                    <li class="list__item"><a class="list__link" href="/contacts.html">Контакты</a>
-                    </li>
-              </ul>
+                </ul>
                 <section class="section section--info section--menu-page">
                     <div class="section__content">
                         <ul class="list list--contacts list--menu-page-contacts">
@@ -413,7 +461,7 @@
         <!-- END page wrapper-->
 
 
-        <script src="../static/js/maintwbvkw.min.js"></script>
+        <script src="static/js/maintwbvkw.min.js"></script>
     </body>
 
 </html>

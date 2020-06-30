@@ -10,7 +10,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/static/assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -22,7 +22,7 @@ module.exports = {
         short_name: `iVolga`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `static/assets/img/icons/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `./src/assets/img/icons/favicon-196х196.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,

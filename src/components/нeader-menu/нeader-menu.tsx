@@ -13,7 +13,7 @@ const HeaderMenu = () => {
     typeof window !== "undefined" ? window.location.pathname : ""
 
   return (
-    <div className="menu">
+    <nav className="menu">
       <ul className="list list--top-menu">
         {menu.map((listItem: EaderMenu) => (
           <li
@@ -51,7 +51,7 @@ const HeaderMenu = () => {
 
       {/*    </div>*/}
       {/*</a>*/}
-    </div>
+    </nav>
   )
 }
 

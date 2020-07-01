@@ -1,7 +1,7 @@
-import React from "react"
-import "./header.css"
-import HeaderMenu from "../нeader-menu/нeader-menu"
-import { Link } from "gatsby"
+import React from "react";
+import "./header.css";
+import HeaderMenu from "../нeader-menu/нeader-menu";
+import { Link } from "gatsby";
 
 const Header = () => (
   <header className="page__header">
@@ -45,6 +45,6 @@ const Header = () => (
 
     <HeaderMenu />
   </header>
-)
+);
 
-export default Header
+export default Header;

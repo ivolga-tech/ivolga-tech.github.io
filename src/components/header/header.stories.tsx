@@ -1,6 +1,6 @@
-import React from "react"
-import Header from "./header"
+import React from "react";
+import Header from "./header";
 
-export default { title: "Header" }
+export default { title: "Header" };
 
-export const headerDefault = () => <Header siteTitle="test" />
+export const headerDefault = () => <Header />;

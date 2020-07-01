@@ -15,4 +15,4 @@ export const menu = [
     url: "/contacts/",
     name: "Контакты",
   },
-]
+];

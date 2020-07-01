@@ -2,3 +2,5 @@
 package.json
 package-lock.json
 public
+source-files
+node_modules

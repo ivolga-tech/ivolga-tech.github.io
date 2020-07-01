@@ -1,9 +1,9 @@
-import React from "react"
-import "./wrapper.css"
+import React from "react";
+import "./wrapper.css";
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const PageWrapper = ({ children }: Props) => (
   <div className="page page--defaults" id="page">
@@ -24,6 +24,6 @@ const PageWrapper = ({ children }: Props) => (
       <div>{children}</div>
     </div>
   </div>
-)
+);
 
-export default PageWrapper
+export default PageWrapper;

@@ -1,6 +1,6 @@
-import React from "react"
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import React from "react";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo";
 
 const Vocations = () => {
   return (
@@ -8,7 +8,7 @@ const Vocations = () => {
       <SEO title="vocations" />
       Vocations page
     </Layout>
-  )
-}
+  );
+};
 
-export default Vocations
+export default Vocations;

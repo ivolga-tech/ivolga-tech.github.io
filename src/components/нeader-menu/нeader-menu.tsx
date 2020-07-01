@@ -1,16 +1,16 @@
-import React from "react"
-import { Link } from "gatsby"
-import "./нeader-menu.css"
-import { menu } from "../../configs/menu"
+import React from "react";
+import { Link } from "gatsby";
+import "./нeader-menu.css";
+import { menu } from "../../configs/menu";
 
 type EaderMenu = {
-  url: string
-  name: string
-}
+  url: string;
+  name: string;
+};
 
 const HeaderMenu = () => {
   const pathname: string =
-    typeof window !== "undefined" ? window.location.pathname : ""
+    typeof window !== "undefined" ? window.location.pathname : "";
 
   return (
     <nav className="menu">
@@ -18,7 +18,7 @@ const HeaderMenu = () => {
         {menu.map((listItem: EaderMenu) => (
           <li
             className={
-              "list__item " + `${pathname === listItem.url ? "is-active" : ""}`
+              "list__item" + `${pathname === listItem.url ? "is-active" : ""}`
             }
             key={listItem.url}
           >
@@ -52,7 +52,7 @@ const HeaderMenu = () => {
       {/*    </div>*/}
       {/*</a>*/}
     </nav>
-  )
-}
+  );
+};
 
-export default HeaderMenu
+export default HeaderMenu;

@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import Header from "../header/header"
-import PageWrapper from "../wrapper/wrapper"
+import React from "react";
+import Header from "../header/header";
+import PageWrapper from "../wrapper/wrapper";
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: Props) => {
   return (
@@ -19,7 +19,7 @@ const Layout = ({ children }: Props) => {
       <Header />
       <main>{children}</main>
     </PageWrapper>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

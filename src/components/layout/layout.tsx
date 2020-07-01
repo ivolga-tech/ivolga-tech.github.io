@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Header from "../header/header"
 import PageWrapper from "../wrapper/wrapper";
 
@@ -15,19 +14,10 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <PageWrapper>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <main>{children}</main>
     </PageWrapper>
   )

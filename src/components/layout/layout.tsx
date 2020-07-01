@@ -16,7 +16,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <PageWrapper>
-      <Header />
+      <Header headerLogo="../../assets/img/minified-svg/logo-ivolga.svg" />
       <main>{children}</main>
     </PageWrapper>
   );

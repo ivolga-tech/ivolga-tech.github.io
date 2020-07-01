@@ -13,13 +13,7 @@ const Header = (props: Props) => {
   return (
     <header className="page__header">
       <Link className="logo" to="/">
-        {headerLogo && (
-          <img
-            className="icon icon--ivolga"
-            src={headerLogo}
-            alt="logo-ivolga"
-          />
-        )}
+        {headerLogo && <img className="icon icon--ivolga" src={headerLogo} alt="logo-ivolga" />}
       </Link>
 
       {/*<div className="modal">*/}

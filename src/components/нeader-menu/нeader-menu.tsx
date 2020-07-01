@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import "./нeader-menu.css";
 import { menu } from "../../configs/menu";
 
-type EaderMenu = {
+type HeaderMenu = {
   url: string;
   name: string;
 };
@@ -15,7 +15,7 @@ const HeaderMenu = () => {
   return (
     <nav className="menu">
       <ul className="list list--top-menu">
-        {menu.map((listItem: EaderMenu) => (
+        {menu.map((listItem: HeaderMenu) => (
           <li
             className={
               "list__item" + `${pathname === listItem.url ? "is-active" : ""}`

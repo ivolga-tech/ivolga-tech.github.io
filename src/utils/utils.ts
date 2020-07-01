@@ -11,3 +11,9 @@ export const CreateImage = (params: Params) => {
     size && size2 ? size + "x" + size2 : size
   }${text ? "?text=" + text : ""}`;
 };
+
+export const joinCssClasses = (
+  ...cssClasses: (string | boolean | undefined)[]
+): string => {
+  return cssClasses.filter(Boolean).join(" ").trim();
+};

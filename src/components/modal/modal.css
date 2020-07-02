@@ -1,0 +1,23 @@
+.modal__background {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0;
+  z-index: 100;
+  -webkit-transition: opacity ease-out 0.5s, top ease-out 0.3s;
+  transition: opacity ease-out 0.5s, top ease-out 0.3s;
+  -webkit-transition-property: opacity, top;
+  transition-property: opacity, top;
+  -webkit-transition-delay: 0.3s, 1s;
+  transition-delay: 0.3s, 1s;
+}
+
+.modal.is-show .modal__background {
+  top: 0;
+  opacity: 0.7;
+  -webkit-transition: opacity ease-out 0.5s;
+  transition: opacity ease-out 0.5s;
+}

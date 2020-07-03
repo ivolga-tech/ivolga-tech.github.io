@@ -15,9 +15,26 @@
   transition-delay: 0.3s, 1s;
 }
 
+.modal__form {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: ease-out 0.5s;
+  transition: ease-out 0.5s;
+  z-index: 101;
+}
+
 .modal.is-show .modal__background {
   top: 0;
   opacity: 0.7;
   -webkit-transition: opacity ease-out 0.5s;
   transition: opacity ease-out 0.5s;
+}
+
+.modal.is-show .modal__form {
+  top: 50%;
+  -webkit-transition: top ease-out 0.5s;
+  transition: top ease-out 0.5s;
 }

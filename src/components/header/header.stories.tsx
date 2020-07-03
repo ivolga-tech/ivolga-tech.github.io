@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./header";
 import { CreateImage } from "../../utils/utils";
+import Header from "./header";
 
 export default { title: "Header" };
 

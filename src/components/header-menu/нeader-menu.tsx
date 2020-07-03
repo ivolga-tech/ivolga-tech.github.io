@@ -3,14 +3,23 @@ import { Link } from "gatsby";
 import "./нeader-menu.css";
 import { menu } from "../../configs/menu";
 import { joinCssClasses } from "../../utils/utils";
+import { Button } from "../button/button";
 
 type HeaderMenu = {
   url: string;
   name: string;
 };
 
-const HeaderMenu = () => {
+type Props = {
+  openModal(): void;
+};
+
+const HeaderMenu = (props: Props) => {
+  const { openModal } = props;
+
   const pathname: string = typeof window !== "undefined" ? window.location.pathname : "";
+
+  const modalOn = true;
 
   return (
     <nav className="menu">
@@ -27,28 +36,37 @@ const HeaderMenu = () => {
         ))}
       </ul>
 
-      <div className="btn btn--yellow">
-        <a className="list__link" id="modal-open" href="#">
+      <Button type="button" className="btn btn--yellow" onClick={() => openModal()}>
+        <a className="list__link" id="modal-open">
           Связаться
         </a>
-      </div>
+      </Button>
 
-      {/*<a className="header-menu-btn header-menu-btn--open" href="#" id="header-menu-page-open">*/}
-      {/*    <div className="header-menu-btn__img">*/}
-      {/*        <svg className="icon icon--header-menu" width="18px" height="14px">*/}
-      {/*            <use xlink:href="#icon-header-menu"></use>*/}
-      {/*        </svg>*/}
-
-      {/*    </div>*/}
-      {/*</a>*/}
-      {/*<a className="header-menu-btn header-menu-btn--close" href="#" id="header-menu-page-close">*/}
-      {/*    <div className="header-menu-btn__img">*/}
-      {/*        <svg className="icon icon--close" width="14px" height="14px">*/}
-      {/*            <use xlink:href="#icon-close"></use>*/}
-      {/*        </svg>*/}
-
-      {/*    </div>*/}
-      {/*</a>*/}
+      {modalOn ? (
+        <a className="menu-btn menu-btn--open" id="header-menu-page-open">
+          <div className="menu-btn__img">
+            <img
+              className="icon icon--menu"
+              width="18px"
+              height="14px"
+              src="../../assets/img/minified-svg/icon-menu.svg"
+              alt="menu"
+            />
+          </div>
+        </a>
+      ) : (
+        <a className="menu-btn menu-btn--close" id="header-menu-page-close">
+          <div className="menu-btn__img">
+            <img
+              className="icon icon--close"
+              width="14px"
+              height="14px"
+              src="../../assets/img/minified-svg/icon-close.svg"
+              alt="close"
+            />
+          </div>
+        </a>
+      )}
     </nav>
   );
 };

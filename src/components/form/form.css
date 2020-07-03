@@ -1,0 +1,222 @@
+.form {
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  font-family: "Proxima Nova Lt", monospace;
+  font-weight: 600;
+  color: #000000;
+  cursor: default;
+}
+
+.form__title {
+  font-size: 24px;
+  font-family: "Proxima Nova Lt", monospace;
+  font-weight: 600;
+  padding: 45px 50px;
+  text-align: center;
+}
+
+.form__content {
+  padding: 0 50px;
+}
+
+.form__content input,
+.form__content textarea {
+  background: #ffffff;
+  border: none;
+  font-size: 17px;
+  font-family: "Proxima Nova Lt", monospace;
+  font-weight: 600;
+}
+
+.form__content input:focus,
+.form__content textarea:focus {
+  outline: none;
+}
+
+.form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 5px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid #fec419;
+}
+
+.form__group:last-child {
+  margin-bottom: 5px;
+}
+
+.form__label {
+  opacity: 0.5;
+  font-size: 15px;
+  font-family: "Proxima Nova Lt", monospace;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form__footer {
+  position: relative;
+  bottom: -30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.form--contact-us {
+  width: 100%;
+}
+
+.form__file .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.form__file .label .label-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: solid 1px #fec419;
+  background-color: rgba(254, 196, 25, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.form__file .label .label-remove {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: solid 1px #fec419;
+  color: #fec419;
+  background-color: rgba(254, 196, 25, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.form__file .label .label-remove svg path {
+  fill: currentcolor;
+}
+
+.form__file .label .label-remove:hover {
+  color: #ffffff;
+  background: #fec419;
+  cursor: pointer;
+}
+
+.form__file .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form__file .inputfile.no-file + .label .label-icon,
+.form__file .inputfile.no-file + .label .label-remove {
+  display: none;
+}
+
+.form__file .inputfile + .label {
+  background: #ffffff;
+  font-size: 15px;
+  color: #000000;
+  font-family: "Proxima Nova Rg", monospace;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+  cursor: default;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.form__file .inputfile + .label label {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 0 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.form__file .inputfile.no-file + .label label {
+  width: 100%;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: solid 1px #fec419;
+  cursor: pointer;
+}
+
+.form__file .inputfile.no-file + .label label span {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  padding: 0;
+}
+
+.form__file .inputfile.no-file + .label label:hover {
+  background: #fec419;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+@media (min-width: 376px) {
+  .form--contact-us {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form__content {
+    padding: 0 30px;
+  }
+}

@@ -4,6 +4,7 @@ import "./нeader-menu.css";
 import { menu } from "../../configs/menu";
 import { joinCssClasses } from "../../utils/utils";
 import { Button } from "../button/button";
+import { useLocation } from "@reach/router";
 
 type HeaderMenu = {
   url: string;
@@ -17,7 +18,7 @@ type Props = {
 const HeaderMenu = (props: Props) => {
   const { openModal } = props;
 
-  const pathname: string = typeof window !== "undefined" ? window.location.pathname : "";
+  const location = useLocation().pathname;
 
   const modalOn = true;
 
@@ -26,7 +27,7 @@ const HeaderMenu = (props: Props) => {
       <ul className="list list--top-menu">
         {menu.map((listItem: HeaderMenu) => (
           <li
-            className={joinCssClasses("list__item", pathname === listItem.url ? "is-active" : "")}
+            className={joinCssClasses("list__item", location === listItem.url ? "is-active" : "")}
             key={listItem.url}
           >
             <Link className="list__link" to={listItem.url}>

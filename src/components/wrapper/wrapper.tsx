@@ -10,14 +10,14 @@ const PageWrapper = ({ children }: Props) => (
     <div className="page__wrapper">
       <div className="page__img">
         <div className="page__img-wrap">
-          <article className="icon icon--ivolga">
+          <figure className="icon icon--ivolga">
             <img
               src="../../assets/img/minified-svg/ivolga-bg.svg"
               alt="ivolga-bg"
               width="1083px"
               height="1081px"
             />
-          </article>
+          </figure>
         </div>
       </div>
 

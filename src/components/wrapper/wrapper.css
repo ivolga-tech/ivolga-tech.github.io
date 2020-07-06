@@ -560,7 +560,7 @@ body {
   .page__img-wrap {
     padding-left: 0;
   }
-  .page__img-wrap .icon {
+  .page__img-wrap img {
     width: 550px;
     height: 100%;
   }
@@ -596,7 +596,7 @@ body {
     width: 165px;
     height: 450px;
   }
-  .page__img-wrap .icon {
+  .page__img-wrap img {
     width: 430px;
   }
 }

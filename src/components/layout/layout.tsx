@@ -17,7 +17,11 @@ const Layout = ({ children }: Props) => {
   return (
     <PageWrapper>
       <Header headerLogo="../../assets/img/minified-svg/logo-ivolga.svg" />
-      <main>{children}</main>
+      <main>
+        <div className="page__content" id="content">
+          {children}
+        </div>
+      </main>
     </PageWrapper>
   );
 };

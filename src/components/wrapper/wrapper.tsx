@@ -1,5 +1,6 @@
 import React from "react";
 import "./wrapper.css";
+import "flexboxgrid"
 import { joinCssClasses } from "../../utils/utils";
 import { useLocation } from "@reach/router";
 

@@ -30,7 +30,7 @@ const Header = (props: Props) => {
       </Link>
       <Modal modalState={modalState} closeModal={closeModal} formModal={true}>
         <Card cardType="form-modal">
-          <Form />
+          <Form modal={true} />
         </Card>
       </Modal>
       <HeaderMenu openModal={openModal} />

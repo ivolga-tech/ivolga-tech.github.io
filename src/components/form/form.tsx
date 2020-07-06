@@ -1,9 +1,20 @@
 import React from "react";
 import "./form.css";
+import { joinCssClasses } from "../../utils/utils";
 
-const Form = () => {
+type Props = {
+  modal?: boolean;
+};
+
+const Form = (props: Props) => {
+  const { modal = false } = props;
+
   return (
-    <form className="form form--contact-us modal__form" action="/" method="POST">
+    <form
+      className={joinCssClasses("form form--contact-us", modal ? "modal__form" : "")}
+      action="/"
+      method="POST"
+    >
       <div className="form__title">Свяжитесь с нами</div>
       <div className="form__content">
         <div className="form__group">

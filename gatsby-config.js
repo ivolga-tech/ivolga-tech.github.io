@@ -13,6 +13,16 @@ module.exports = {
         path: `${__dirname}/src/assets`,
       },
     },
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+        repositoryName: "test-gatsby-app",
+        accessToken: "MC5Ydms5NXhBQUFDWUFtajRU.77-9Cu-_ve-_ve-_vRHvv73vv70tb--_vSDvv73vv73vv73vv70DGO-_vTkvM--_ve-_vTwtcTdL77-9G--_vQ",
+        schemas: {
+          "contacts": require('./src/schemas/contacts.json')
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

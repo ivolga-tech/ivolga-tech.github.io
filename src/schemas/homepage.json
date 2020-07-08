@@ -1,0 +1,77 @@
+{
+  "HomePage" : {
+    "title1" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "title",
+        "placeholder" : "Enter home page title"
+      }
+    }
+  },
+  "contacts" : {
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading2",
+        "label" : "title",
+        "placeholder" : "enter contacts title"
+      }
+    },
+    "subtitle" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "allowTargetBlank" : true,
+        "label" : "subTitle",
+        "placeholder" : "enter sub title"
+      }
+    },
+    "content" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "list_item_name" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph",
+              "label" : "list item name",
+              "placeholder" : "name of contact"
+            }
+          },
+          "list_item_content" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph",
+              "label" : "list item content",
+              "placeholder" : "contact content"
+            }
+          }
+        },
+        "label" : "content"
+      }
+    },
+    "list_social_links" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "social_logo" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "social logo"
+            }
+          },
+          "social_links" : {
+            "type" : "Link",
+            "config" : {
+              "label" : "social links"
+            }
+          }
+        },
+        "label" : "list social links"
+      }
+    }
+  }
+}

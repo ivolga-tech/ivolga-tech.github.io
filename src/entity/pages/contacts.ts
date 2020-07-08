@@ -8,7 +8,7 @@ export type Edges = {
 
 export type ContactsQueryData = {
   data: {
-    contacts: {
+    HomePage: {
       edges: Edges[];
     };
   };

@@ -17,13 +17,13 @@ type SocialLink = {
 };
 
 export type ContactsData = {
-  title: {
+  contacts_title: {
     text: string;
   };
-  subtitle: {
+  contacts_subtitle: {
     text: string;
   };
-  content: ListItem[];
+  contacts_content: ListItem[];
   list_social_links: SocialLink[];
 };
 
@@ -45,12 +45,12 @@ export type ContactsPageVM = {
 };
 
 export const toContactsPageVM = (contacts: ContactsData): ContactsPageVM => {
-  const { title, content, list_social_links, subtitle } = contacts;
+  const { contacts_title, contacts_subtitle, contacts_content, list_social_links } = contacts;
 
   return {
-    title: title.text,
-    subtitle: subtitle.text,
-    contacts: content.map(contact => {
+    title: contacts_title.text,
+    subtitle: contacts_subtitle.text,
+    contacts: contacts_content.map(contact => {
       const { list_item_name, list_item_content } = contact;
       return {
         name: list_item_name.text,

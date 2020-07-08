@@ -16,7 +16,7 @@ type SocialLink = {
   };
 };
 
-type Contacts = {
+export type ContactsData = {
   title: {
     text: string;
   };
@@ -44,7 +44,7 @@ export type ContactsPageVM = {
   socialLinks: SocialLinksItem[];
 };
 
-export const toContactsPageVM = (contacts: Contacts): ContactsPageVM => {
+export const toContactsPageVM = (contacts: ContactsData): ContactsPageVM => {
   const { title, content, list_social_links, subtitle } = contacts;
 
   return {

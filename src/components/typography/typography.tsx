@@ -10,5 +10,9 @@ type Props = {
 export const Typography = (props: Props) => {
   const { children, component: Component = "p", className } = props;
 
-  return <Component className={joinCssClasses(Component, className)}>{children}</Component>;
+  return (
+    <Component style={{ margin: 0 }} className={joinCssClasses(Component, className)}>
+      {children}
+    </Component>
+  );
 };

@@ -1,14 +1,56 @@
 import React from "react";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
+import ContactsContainer from "../components/contacts/contacts-container";
+import { graphql } from "gatsby";
+import { toContactsPageVM } from "../presenters/contacts";
+import { ContactsQueryData } from "../entity/pages/contacts";
 
-const Contacts = () => {
+const Contacts = (props: ContactsQueryData) => {
+  const contactsViewModel = toContactsPageVM(props.data.contacts.edges[0].node.data);
+
   return (
     <Layout>
-      <SEO title="contacts" />
-      Contacts page
+      <SEO title="Contacts" />
+      <ContactsContainer viewModel={contactsViewModel} />
     </Layout>
   );
 };
 
 export default Contacts;
+
+export const ContactsQuery = graphql`
+  query Contacts {
+    contacts: allPrismicContacts {
+      edges {
+        node {
+          data {
+            title {
+              text
+            }
+            subtitle {
+              text
+            }
+            content {
+              list_item_name {
+                text
+              }
+              list_item_content {
+                text
+              }
+            }
+            list_social_links {
+              social_logo {
+                alt
+                url
+              }
+              social_links {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

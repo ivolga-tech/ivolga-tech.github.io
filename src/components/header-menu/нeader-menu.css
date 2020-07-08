@@ -167,7 +167,6 @@
 }
 
 .list--social-links .list__item {
-  border-radius: 4px;
   margin-right: 20px;
 }
 
@@ -185,38 +184,15 @@
   justify-content: center;
 }
 
-.list--social-links .list__item.vk {
-  background: #4c6c91;
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
+.social-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
 }
 
-.list--social-links .list__item.vk:hover {
-  background: #3a5370;
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
-}
-
-.list--social-links .list__item.tw {
-  background: #55acee;
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
-}
-
-.list--social-links .list__item.tw:hover {
-  background: #2795e9;
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
-}
-
-.list--social-links .list__item.fb-sm {
-  background: #3b5998;
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
-}
-
-.list--social-links .list__item.fb-sm:hover {
-  background: #2d4373;
+.social-logo:hover {
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.1);
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
 }

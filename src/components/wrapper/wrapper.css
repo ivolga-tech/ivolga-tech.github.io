@@ -600,3 +600,131 @@ body {
     width: 430px;
   }
 }
+
+.section {
+  margin: 40px 0;
+}
+
+.section__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.section__title h2 {
+  font-size: 44px;
+  font-family: "Proxima Nova Th", monospace;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+.section__subtitle {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #000000;
+  margin-bottom: 31px;
+}
+
+.section__subtitle a {
+  color: #0076ff;
+  text-decoration: none;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+
+.section__subtitle a:hover {
+  color: #005ecc;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+
+.section--slogan {
+  margin-bottom: 105px;
+}
+
+.section--cards h2 {
+  margin-right: 15px;
+}
+
+.section--cards .btn {
+  margin-top: 3px;
+}
+
+.section--cards .row__col {
+  margin-bottom: 36px;
+}
+
+.section--icon-cards .row__col {
+  margin-bottom: 57px;
+}
+
+.section--info {
+  margin: 0;
+}
+
+.section--info .section__subtitle {
+  margin-bottom: 40px;
+}
+
+.section--menu-page .section__content {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.section--project {
+  margin-top: 6.25rem;
+}
+
+@media (max-width: 1024px) {
+  .section__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .section--info {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .section--info .section__title {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .section--menu-page {
+    text-align: left;
+  }
+}
+
+@media (max-width: 375px) {
+  .section {
+    margin: 75px 0;
+  }
+  .section--slogan {
+    margin-top: 60px;
+  }
+  .section--menu-page {
+    margin-top: 0;
+  }
+}

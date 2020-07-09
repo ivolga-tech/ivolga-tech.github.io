@@ -5,13 +5,17 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   component?: "p" | "h1" | "h2" | "span";
+  resetMargin?: boolean;
 };
 
 export const Typography = (props: Props) => {
-  const { children, component: Component = "p", className } = props;
+  const { children, component: Component = "p", className, resetMargin } = props;
 
   return (
-    <Component style={{ margin: 0 }} className={joinCssClasses(Component, className)}>
+    <Component
+      style={!resetMargin ? { margin: 0 } : {}}
+      className={joinCssClasses(Component, className)}
+    >
       {children}
     </Component>
   );

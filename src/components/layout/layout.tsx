@@ -11,15 +11,14 @@ import Header from "../header/header";
 
 type Props = {
   children: React.ReactNode;
-  headerLogo?: string;
 };
 
 const Layout = (props: Props) => {
-  const {children , headerLogo } = props
+  const { children } = props;
 
   return (
     <PageWrapper>
-      <Header headerLogo={headerLogo}/>
+      <Header headerLogo={require("../../assets/img/minified-svg/logo-ivolga.svg")} />
       <main>
         <div className="page__content" id="content">
           {children}

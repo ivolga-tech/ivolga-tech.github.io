@@ -77,6 +77,10 @@
   cursor: pointer;
 }
 
+.card {
+  text-decoration: none;
+}
+
 .card__img {
   height: 170px;
   border-radius: 8px;

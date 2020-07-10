@@ -8,7 +8,7 @@ const IndexPage = (props: any) => {
   const vm = props.data.HomePage.edges[0].node.data;
 
   return (
-    <Layout>
+    <Layout headerLogo={vm.header_logo.url} >
       <SEO title="iVolga Technologies" />
       home page
       <Typography component="h1">{vm.home_page_title.text}</Typography>
@@ -26,6 +26,9 @@ export const HomepPageQuery = graphql`
           data {
             home_page_title {
               text
+            }
+            header_logo {
+              url
             }
           }
         }

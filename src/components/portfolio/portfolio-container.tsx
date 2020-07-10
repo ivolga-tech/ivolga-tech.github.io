@@ -31,7 +31,10 @@ const PortfolioContainer = (props: Props) => {
         <div className="row">
           {viewModel.map((card: any) => {
             return (
-              <div key={card.portfolio_card_title.text} className="row__col col-xs-12 col-sm-6 col-md-4">
+              <div
+                key={card.portfolio_card_title.text}
+                className="row__col col-xs-12 col-sm-6 col-md-4"
+              >
                 <Card
                   cardType={"link"}
                   className="card--hover"

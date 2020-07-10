@@ -11,7 +11,7 @@ type Props = {
 const PageWrapper = ({ children }: Props) => {
   const location = useLocation().pathname;
 
-  const bgLogo = require("../../assets/img/minified-svg/ivolga-bg.svg")
+  const bgLogo = require("../../assets/img/minified-svg/ivolga-bg.svg");
 
   return (
     <div className="page page--defaults" id="page">
@@ -19,12 +19,7 @@ const PageWrapper = ({ children }: Props) => {
         <div className={joinCssClasses("page__img", location !== "/" ? "blur" : "")}>
           <div className="page__img-wrap">
             <figure className="icon icon--ivolga">
-              <img
-                src={bgLogo}
-                alt="ivolga-bg"
-                width="1083px"
-                height="1081px"
-              />
+              <img src={bgLogo} alt="ivolga-bg" width="1083px" height="1081px" />
             </figure>
           </div>
         </div>

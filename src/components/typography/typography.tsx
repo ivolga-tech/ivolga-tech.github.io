@@ -4,7 +4,7 @@ import { joinCssClasses } from "../../utils/utils";
 type Props = {
   children?: React.ReactNode;
   className?: string;
-  component?: "p" | "h1" | "h2" | "span";
+  component?: "p" | "h1" | "h2" | "span" | "div";
   resetMargin?: boolean;
 };
 

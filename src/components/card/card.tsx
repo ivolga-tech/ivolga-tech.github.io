@@ -1,6 +1,7 @@
 import React from "react";
 import "./card.css";
 import { Link } from "gatsby";
+import { joinCssClasses } from "../../utils/utils"
 
 type Props = {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ const Card = ({ children, cardType, className, to, title }: Props): JSX.Element 
         return <div className="card card--form card--modal">{children}</div>;
       case cardType === "link":
         return (
-          <Link to={to ? to : ""} className={className} data-toggle="link" title={title}>
+          <Link to={to ? to : ""} className={joinCssClasses("card", className)} data-toggle="link" title={title}>
             {children}
           </Link>
         );

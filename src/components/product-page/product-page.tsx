@@ -5,105 +5,102 @@ import Layout from "../layout/layout";
 import SEO from "../seo";
 import { Typography } from "../typography/typography";
 import Card from "../card/card";
+import { toProductPageVM } from "../../presenters/product-page";
 
 const ProductPage = ({ data: { prismicProductPage } }: any) => {
   const { data } = prismicProductPage;
-  console.log(data);
+
+  const viewModel = toProductPageVM(data);
 
   const {
-    product_logo,
+    logo,
     product_title,
     product_description,
     about_the_project_title,
     about_the_project,
     big_screenshot_title,
     big_screenshot_description,
-    big_screenshot_field,
+    big_screenshot,
     sub_description_title,
     sub_description,
-    screenshot_gallery_field,
-  } = data;
+    screenshot_gallery,
+  } = viewModel;
 
   return (
     <Layout>
-      <SEO title={data.product_title[0].text} />
+      <SEO title={product_title} />
 
       <div className="project">
         <div className="project__card">
           <Card className="card--header mt-40 card--lighgrey">
-            <div className="card__img no-border">
-              <img src={product_logo.url} alt={product_logo.alt} title={product_title[0].text} />
-            </div>
-            <div className="card__content">
-              <div className="card__title">{product_title[0].text}</div>
-              <div className="card__desc">{product_description[0].text}</div>
-            </div>
+            {logo?.url && (
+              <div className="card__img no-border">
+                <img src={logo.url} alt={logo.alt} title={product_title} />
+              </div>
+            )}
+            {product_title && (
+              <div className="card__content">
+                <div className="card__title">{product_title}</div>
+                <div className="card__desc">{product_description}</div>
+              </div>
+            )}
           </Card>
         </div>
         <div className="project__block mt-100">
           <div className="block">
             <div className="block__title">
               <Typography component="h2" resetMargin={true}>
-                {about_the_project_title[0].text}
+                {about_the_project_title}
               </Typography>
             </div>
-            <Typography className="block__subtitle">{about_the_project[0].text}</Typography>
+            <Typography className="block__subtitle">{about_the_project}</Typography>
           </div>
         </div>
 
-        {big_screenshot_title[0].text &&
-          big_screenshot_description[0].text &&
-          big_screenshot_field && (
-            <div className="project__block mt-100">
-              <div className="block">
-                <div className="block__title">
-                  <Typography component="h2" resetMargin={true}>
-                    {big_screenshot_title[0].text}
-                  </Typography>
-                </div>
-                <Typography className="block__subtitle">
-                  {big_screenshot_description[0].text}
-                </Typography>
-              </div>
-              <div className="block block--img">
-                {big_screenshot_field.map(
-                  (image: { big_screenshot: { url: string; alt: string } }) => {
-                    return (
-                      <div key={image.big_screenshot.alt} className="block__img">
-                        <img
-                          src={image.big_screenshot.url}
-                          alt={image.big_screenshot.alt}
-                          title="Waitre"
-                        />
-                      </div>
-                    );
-                  }
-                )}
-              </div>
-            </div>
-          )}
-
-        {sub_description_title[0].text && sub_description[0].text && screenshot_gallery_field && (
+        {big_screenshot_title && big_screenshot_description && big_screenshot && (
           <div className="project__block mt-100">
             <div className="block">
               <div className="block__title">
-                <Typography resetMargin={true} component="h2">
-                  {sub_description_title[0].text}
+                <Typography component="h2" resetMargin={true}>
+                  {big_screenshot_title}
                 </Typography>
               </div>
-              <Typography className="block__subtitle">
-                {sub_description[0].text}
+              <Typography className="block__subtitle">{big_screenshot_description}</Typography>
+            </div>
+            <div className="block block--img">
+              {big_screenshot.map(image => {
+                return (
+                  <div key={image.src} className="block__img">
+                    <img src={image.src} alt={image.alt} title="Waitre" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {screenshot_gallery && (
+          <div className="project__block mt-100">
+            <div className="block">
+              <div className="block__title">
+                {sub_description_title && (
+                  <Typography resetMargin={true} component="h2">
+                    {sub_description_title}
+                  </Typography>
+                )}
+              </div>
+              <Typography component="div" className="block__subtitle">
+                {sub_description}
 
                 <div className="row row--out mt-40">
-                  {screenshot_gallery_field.map((image: any) => {
+                  {screenshot_gallery.map(image => {
                     return (
-                      <div className="block block--img block--img-440 col-xs-12 col-sm-6">
+                      <div
+                        key={image.src}
+                        className="block block--img block--img-440 col-xs-12 col-sm-6"
+                      >
                         <div className="block__img">
-                          <img
-                            src={image.screenshot_gallery.url}
-                            alt={image.screenshot_gallery.url}
-                            title={image.screenshot_gallery.url}
-                          />
+                          <img src={image.src} alt={image.alt} title={image.alt} />
                         </div>
                       </div>
                     );
@@ -161,6 +158,7 @@ export const pageQuery = graphql`
         }
         screenshot_gallery_field {
           screenshot_gallery {
+            alt
             url
           }
         }

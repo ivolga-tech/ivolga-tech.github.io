@@ -1,13 +1,5 @@
 {
   "HomePage": {
-    "header_logo": {
-      "type": "Image",
-      "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "header logo"
-      }
-    },
     "home_page_title": {
       "type": "StructuredText",
       "config": {

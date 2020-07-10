@@ -1,5 +1,13 @@
 {
   "HomePage": {
+    "header_logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "header logo"
+      }
+    },
     "home_page_title": {
       "type": "StructuredText",
       "config": {
@@ -71,6 +79,54 @@
           }
         },
         "label": "list social links"
+      }
+    }
+  },
+  "portfolio": {
+    "portfolio_field": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "portfolio_card_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "portfolio card image"
+            }
+          },
+          "card_background_color": {
+            "type": "Color",
+            "config": {
+              "label": "Card background color"
+            }
+          },
+          "portfolio_card_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1",
+              "label": "portfolio card title",
+              "placeholder": "Enter card title"
+            }
+          },
+          "portfolio_card_meta_tegs": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "portfolio card meta tegs",
+              "placeholder": "Enter meta tags with a space"
+            }
+          },
+          "portfolio_card_description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "portfolio card description",
+              "placeholder": "Enter card description"
+            }
+          }
+        },
+        "label": "portfolio field"
       }
     }
   }

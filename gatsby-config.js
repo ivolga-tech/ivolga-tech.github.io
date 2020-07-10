@@ -19,7 +19,8 @@ module.exports = {
         repositoryName: "test-gatsby-app",
         accessToken: process.env.API_KEY,
         schemas: {
-          "homepage": require('./src/schemas/homepage.json')
+          "homepage": require('./src/schemas/homepage.json'),
+          "products": require('./src/schemas/products.json')
         },
       },
     },

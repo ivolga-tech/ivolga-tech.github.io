@@ -1,0 +1,108 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "slug",
+        "placeholder" : "enter slug name"
+      }
+    },
+    "product_logo" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "product logo"
+      }
+    },
+    "product_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "product title",
+        "placeholder" : "Enter product title"
+      }
+    },
+    "product_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "product description",
+        "placeholder" : "Enter product description"
+      }
+    },
+    "about_the_project" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "about the project",
+        "placeholder" : "Enter about the project"
+      }
+    },
+    "big_screenshot_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Big screenshot title",
+        "placeholder" : "Enter screenshots title"
+      }
+    },
+    "big_screenshot_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Big screenshot description",
+        "placeholder" : "Enter big screenshot discription"
+      }
+    },
+    "big_screenshot_field" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "big_screenshot" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "big screenshot"
+            }
+          }
+        },
+        "label" : "big screenshot field"
+      }
+    },
+    "sub_description_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "sub description title",
+        "placeholder" : "Enter sub description title"
+      }
+    },
+    "sub_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "allowTargetBlank" : true,
+        "label" : "sub description",
+        "placeholder" : "Enter sub description"
+      }
+    },
+    "screenshot_gallery_field" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "screenshot_gallery" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "screenshot gallery"
+            }
+          }
+        },
+        "label" : "screenshot gallery field"
+      }
+    }
+  }
+}

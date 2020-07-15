@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../form/form";
 import Card from "../card/card";
-import { ContactsPageVM } from "../../presenters/contacts";
+import { ContactsPageVM } from "../../presenters/contactsVM";
 import { Typography } from "../typography/typography";
 
 type Props = {

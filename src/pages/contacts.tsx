@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import ContactsContainer from "../components/contacts/contacts-container";
 import { graphql } from "gatsby";
-import { toContactsPageVM } from "../presenters/contacts";
+import { toContactsPageVM } from "../presenters/contactsVM";
 import { ContactsQueryData } from "../entity/pages/contacts";
 
 const Contacts = (props: ContactsQueryData) => {

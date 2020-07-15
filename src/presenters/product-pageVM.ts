@@ -1,7 +1,4 @@
-type Logo = {
-  url: string;
-  alt?: string;
-};
+import { Image } from "../entity/image";
 
 type Big_screenshot = {
   big_screenshot: {
@@ -17,8 +14,8 @@ type Screenshot = {
   };
 };
 
-type ProductPage = {
-  product_logo?: Logo;
+type ProductPageVM = {
+  product_logo?: Image;
   product_title: { text: string }[];
   product_description: { text: string }[];
   about_the_project_title: { text: string }[];
@@ -31,7 +28,7 @@ type ProductPage = {
   screenshot_gallery_field: Screenshot[];
 };
 
-export const toProductPageVM = (productPage: ProductPage) => {
+export const toProductPageVM = (productPage: ProductPageVM) => {
   const {
     product_logo,
     about_the_project,

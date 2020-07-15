@@ -5,7 +5,7 @@ import Layout from "../layout/layout";
 import SEO from "../seo";
 import { Typography } from "../typography/typography";
 import Card from "../card/card";
-import { toProductPageVM } from "../../presenters/product-page";
+import { toProductPageVM } from "../../presenters/product-pageVM";
 
 const ProductPage = ({ data: { prismicProductPage } }: any) => {
   const { data } = prismicProductPage;

@@ -1,6 +1,6 @@
-import { ContactsData } from "../../presenters/contacts";
+import { ContactsData } from "../../presenters/contactsVM";
 
-export type Edges = {
+type Edges = {
   node: {
     data: ContactsData;
   };

@@ -20,7 +20,8 @@ module.exports = {
         accessToken: process.env.API_KEY,
         schemas: {
           "homepage": require('./src/schemas/homepage.json'),
-          "products": require('./src/schemas/products.json')
+          "products": require('./src/schemas/products.json'),
+          "vacancy": require('./src/schemas/vacancy.json'),
         },
       },
     },

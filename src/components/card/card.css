@@ -226,6 +226,7 @@
   background-color: #ffffff;
   border: solid 1px #e7e7e7;
   position: relative;
+  height: 100%;
 }
 
 .card--icon .card__img {

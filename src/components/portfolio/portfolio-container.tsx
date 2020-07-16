@@ -4,14 +4,14 @@ import { Button } from "../button/button";
 import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 import Card from "../card/card";
+import { PortfolioVM } from "../../presenters/portfolioVM.ts";
 
 type Props = {
-  viewModel: any;
+  viewModel: PortfolioVM;
 };
 
 const PortfolioContainer = (props: Props) => {
   const { viewModel } = props;
-  console.log(viewModel);
   const location = useLocation().pathname;
 
   return (
@@ -29,34 +29,28 @@ const PortfolioContainer = (props: Props) => {
 
       <div className="section__content box">
         <div className="row">
-          {viewModel.map((card: any) => {
+          {viewModel.map(card => {
+            const { title, description, logo, link, meta, backgroundColor } = card;
+
             return (
-              <div
-                key={card.portfolio_card_title.text}
-                className="row__col col-xs-12 col-sm-6 col-md-4"
-              >
+              <div key={title} className="row__col col-xs-12 col-sm-6 col-md-4">
                 <Card
                   cardType={"link"}
                   className="card--hover"
-                  to={`/portfolio/${card.portfolio_card_title.text.toLowerCase()}/`}
-                  title={card.portfolio_card_title.text}
+                  to={`/portfolio/${link}`}
+                  title={title}
                 >
-                  <div
-                    className="card__img"
-                    style={{ background: `${card.card_background_color}` }}
-                  >
-                    <img src={card.portfolio_card_image.url} alt="Waitre" title="Waitre" />
+                  <div className="card__img" style={{ background: `${backgroundColor}` }}>
+                    <img src={logo.url} alt={logo.alt} title={title} />
                   </div>
                   <div className="card__content">
-                    <div className="card__title">{card.portfolio_card_title.text}</div>
+                    <div className="card__title">{title}</div>
                     <div className="card__meta">
                       <ul className="list list--meta">
-                        <li className="list__item">{card.portfolio_card_meta_tegs.text}</li>
+                        <li className="list__item">{meta}</li>
                       </ul>
                     </div>
-                    <Typography className="card__text">
-                      {card.portfolio_card_description.text}
-                    </Typography>
+                    <Typography className="card__text">{description}</Typography>
                   </div>
                 </Card>
               </div>

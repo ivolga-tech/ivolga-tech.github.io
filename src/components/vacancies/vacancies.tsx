@@ -43,7 +43,7 @@ const VacanciesContainer = (props: Props) => {
 
               return (
                 <div key={title} className="row__col col-xs-12 col-sm-6 col-md-4">
-                  <Card cardType="link" className="" to={`/vocations/${link}`} title="Заголовок">
+                  <Card cardType="link" className="" to={`/vocations/${link}`} title={title}>
                     <div className="card--icon">
                       {logo.url && (
                         <div className="card__img">
@@ -59,8 +59,8 @@ const VacanciesContainer = (props: Props) => {
                         <div className="card__meta">
                           <ul className="list list--meta list--icon">
                             {metaTags.length > 0 &&
-                              metaTags.map(metaTag => (
-                                <li key={metaTag} className="list__item">
+                              metaTags.map((metaTag, index) => (
+                                <li key={index} className="list__item">
                                   {metaTag}
                                 </li>
                               ))}

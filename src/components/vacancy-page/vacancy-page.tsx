@@ -16,7 +16,6 @@ type Props = {
 
 const VacancyPage = ({ data: { prismicVacancyPage } }: Props) => {
   const { data } = prismicVacancyPage;
-  console.log(prismicVacancyPage);
 
   const viewModel = toVacancyPageVM(data);
 

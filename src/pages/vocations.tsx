@@ -7,10 +7,7 @@ import { toVocationsVM } from "../presenters/vocationsVM";
 import { VacanciesQueryData } from "../entity/pages/vocations";
 
 const Vocations = (props: VacanciesQueryData) => {
-  const viewModel = toVocationsVM(
-    props.data.vacancies.edges[0].node.data,
-    props.data.vacancies.edges[0].node.uid
-  );
+  const viewModel = toVocationsVM(props.data.vacancies.edges[0].node.data);
 
   return (
     <Layout>
@@ -27,7 +24,6 @@ export const VocationsQuery = graphql`
     vacancies: allPrismicHomepage {
       edges {
         node {
-          uid
           data {
             vacancies_page_title {
               text
@@ -36,6 +32,9 @@ export const VocationsQuery = graphql`
               text
             }
             vacancies_card_field {
+              vacancies_page_link {
+                text
+              }
               card_logo {
                 alt
                 url

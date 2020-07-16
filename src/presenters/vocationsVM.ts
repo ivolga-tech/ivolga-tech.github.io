@@ -2,6 +2,7 @@ import { Image } from "../entity/image";
 
 type VacanciesCard = {
   card_logo: Image;
+  vacancies_page_link: { text: string };
   card_title: { text: string };
   card_meta_tags: {
     raw: { text: string }[];
@@ -27,7 +28,7 @@ export type VocationsVM = {
   vacanciesCards: Card[];
 };
 
-export const toVocationsVM = (vocations: VocationsData, link: string): VocationsVM => {
+export const toVocationsVM = (vocations: VocationsData): VocationsVM => {
   const { vacancies_page_title, vacancies_page_description, vacancies_card_field } = vocations;
 
   return {
@@ -37,7 +38,7 @@ export const toVocationsVM = (vocations: VocationsData, link: string): Vocations
       ? vacancies_card_field.map(card => {
           return {
             logo: card.card_logo,
-            link: link,
+            link: card.vacancies_page_link.text,
             title: card.card_title.text,
             metaTags: card.card_meta_tags.raw.map(tag => tag.text),
           };

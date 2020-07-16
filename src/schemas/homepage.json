@@ -87,6 +87,14 @@
               "label": "portfolio card image"
             }
           },
+          "page_link": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "page link",
+              "placeholder": "Enter target page link"
+            }
+          },
           "card_background_color": {
             "type": "Color",
             "config": {
@@ -139,13 +147,6 @@
         "placeholder": "Enter page description"
       }
     },
-    "uid": {
-      "type": "UID",
-      "config": {
-        "label": "slug",
-        "placeholder": "Enter target page name"
-      }
-    },
     "vacancies_card_field": {
       "type": "Group",
       "config": {
@@ -156,6 +157,14 @@
               "constraint": {},
               "thumbnails": [],
               "label": "card logo"
+            }
+          },
+          "vacancies_page_link": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "vacancies page link",
+              "placeholder": "Enter target page name"
             }
           },
           "card_title": {

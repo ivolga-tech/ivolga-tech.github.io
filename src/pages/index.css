@@ -1,0 +1,27 @@
+.slogan__title {
+  font-size: 50px;
+  font-family: "Proxima Nova Th", monospace;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+@media (max-width: 1024px) {
+  .slogan__title {
+    margin: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .slogan__title {
+    font-size: 40px;
+  }
+  .slogan .col {
+    max-width: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+}

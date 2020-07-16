@@ -10,7 +10,7 @@ const Contacts = (props: ContactsQueryData) => {
   const contactsViewModel = toContactsPageVM(props.data.contacts.edges[0].node.data);
 
   return (
-    <Layout>
+    <Layout contactsViewModel={contactsViewModel}>
       <SEO title="Contacts" />
       <ContactsContainer viewModel={contactsViewModel} />
     </Layout>

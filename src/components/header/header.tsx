@@ -8,10 +8,13 @@ import Card from "../card/card";
 
 type Props = {
   headerLogo?: string;
+  menuState: boolean;
+  openMenu(): void;
+  closeMenu(): void;
 };
 
 const Header = (props: Props) => {
-  const { headerLogo } = props;
+  const { headerLogo, menuState, openMenu, closeMenu } = props;
 
   const [modalState, setModalState] = useState(false);
 
@@ -33,7 +36,12 @@ const Header = (props: Props) => {
           <Form modal={true} />
         </Card>
       </Modal>
-      <HeaderMenu openModal={openModal} />
+      <HeaderMenu
+        menuState={menuState}
+        openModal={openModal}
+        openMenu={openMenu}
+        closeMenu={closeMenu}
+      />
     </header>
   );
 };

@@ -16,8 +16,9 @@ const MenuPage = (props: Props) => {
   return (
     <div className="menu-page" id="menu-page">
       <ul className="list list--menu-page">
-        {menu.map(listItem => (
+        {menu.map((listItem, index) => (
           <li
+            key={index}
             className={joinCssClasses("list__item", location === listItem.url ? "is-active" : "")}
           >
             <Link className="list__link" to={listItem.url}>
@@ -30,20 +31,20 @@ const MenuPage = (props: Props) => {
         <section className="section section--info section--menu-page">
           <div className="section__content">
             <ul className="list list--contacts list--menu-page-contacts">
-              {contactsViewModel.contacts.map(contact => {
+              {contactsViewModel.contacts.map((contact, index) => {
                 const { name, content } = contact;
                 return (
-                  <li key={name} className="list__item">
+                  <li key={index} className="list__item">
                     <Typography component="span">{name}: </Typography> {content}
                   </li>
                 );
               })}
             </ul>
             <ul className="list list--social-links">
-              {contactsViewModel.socialLinks.map(socialLink => {
+              {contactsViewModel.socialLinks.map((socialLink, index) => {
                 const { logo, link } = socialLink;
                 return (
-                  <li key={link} className="list__item">
+                  <li key={index} className="list__item">
                     <a href={link}>
                       <img className="social-logo" src={logo} alt="social link logo" />
                     </a>

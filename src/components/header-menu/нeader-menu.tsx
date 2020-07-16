@@ -13,14 +13,15 @@ type HeaderMenu = {
 
 type Props = {
   openModal(): void;
+  menuState: boolean;
+  openMenu(): void;
+  closeMenu(): void;
 };
 
 const HeaderMenu = (props: Props) => {
-  const { openModal } = props;
+  const { openModal, menuState, openMenu, closeMenu } = props;
 
   const location = useLocation().pathname;
-
-  const modalOn = true;
 
   return (
     <nav className="menu">
@@ -43,26 +44,34 @@ const HeaderMenu = (props: Props) => {
         </a>
       </Button>
 
-      {modalOn ? (
-        <a className="menu-btn menu-btn--open" id="header-menu-page-open">
+      {!menuState ? (
+        <a
+          className="menu-btn menu-btn--open"
+          id="header-menu-page-open"
+          onClick={() => openMenu()}
+        >
           <div className="menu-btn__img">
             <img
               className="icon icon--menu"
               width="18px"
               height="14px"
-              src="../../assets/img/minified-svg/icon-menu.svg"
+              src={require("../../assets/img/minified-svg/icon-menu.svg")}
               alt="menu"
             />
           </div>
         </a>
       ) : (
-        <a className="menu-btn menu-btn--close" id="header-menu-page-close">
+        <a
+          className="menu-btn menu-btn--close"
+          id="header-menu-page-close"
+          onClick={() => closeMenu()}
+        >
           <div className="menu-btn__img">
             <img
               className="icon icon--close"
               width="14px"
               height="14px"
-              src="../../assets/img/minified-svg/icon-close.svg"
+              src={require("../../assets/img/minified-svg/icon-close.svg")}
               alt="close"
             />
           </div>

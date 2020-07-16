@@ -6,15 +6,16 @@ import { useLocation } from "@reach/router";
 
 type Props = {
   children: React.ReactNode;
+  menuState: boolean;
 };
 
-const PageWrapper = ({ children }: Props) => {
+const PageWrapper = ({ children, menuState }: Props) => {
   const location = useLocation().pathname;
 
   const bgLogo = require("../../assets/img/minified-svg/ivolga-bg.svg");
 
   return (
-    <div className="page page--defaults" id="page">
+    <div className={joinCssClasses("page page--defaults", menuState ? "show-menu" : "")} id="page">
       <div className="page__wrapper">
         <div className={joinCssClasses("page__img", location !== "/" ? "blur" : "")}>
           <div className="page__img-wrap">

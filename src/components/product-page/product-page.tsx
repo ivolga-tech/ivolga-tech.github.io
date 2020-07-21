@@ -57,16 +57,20 @@ const ProductPage = ({ data: { prismicProductPage } }: any) => {
           </div>
         </div>
 
-        {big_screenshot_title && big_screenshot_description && big_screenshot && (
-          <div className="project__block mt-100">
-            <div className="block">
+        <div className="project__block mt-100">
+          <div className="block">
+            {big_screenshot_title && (
               <div className="block__title">
                 <Typography component="h2" resetMargin={true}>
                   {big_screenshot_title}
                 </Typography>
               </div>
+            )}
+            {big_screenshot_description && (
               <Typography className="block__subtitle">{big_screenshot_description}</Typography>
-            </div>
+            )}
+          </div>
+          {big_screenshot.length > 0 && (
             <div className="block block--img">
               {big_screenshot.map(image => {
                 return (
@@ -76,8 +80,8 @@ const ProductPage = ({ data: { prismicProductPage } }: any) => {
                 );
               })}
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
         {screenshot_gallery && (
           <div className="project__block mt-100">

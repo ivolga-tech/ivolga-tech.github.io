@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: "gatsby-source-prismic",
       options: {
-        repositoryName: "test-gatsby-app",
+        repositoryName: "ivolgaTech",
         accessToken: process.env.API_KEY,
         schemas: {
           "homepage": require('./src/schemas/homepage.json'),

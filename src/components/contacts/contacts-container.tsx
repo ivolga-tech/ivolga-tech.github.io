@@ -54,7 +54,23 @@ const ContactsContainer = (props: Props) => {
 
       <div className="col-xs-12 col-md-6">
         <Card cardType="form">
-          <Form />
+          <Form action="https://liveformhq.com/form/1a021738-357c-47eb-adf0-f446e8b80919?g-recaptcha-response">
+            <div className="form__title">Свяжитесь с нами</div>
+            <div className="form__content">
+              <div className="form__group">
+                <label className="form__label">Как вас зовут ?</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div className="form__group">
+                <label className="form__label">Телефон или email для связи</label>
+                <input type="text" name="contact" id="contact" />
+              </div>
+              <div className="form__group">
+                <label className="form__label">Чем мы можем вам помочь ?</label>
+                <textarea name="message" cols={30} rows={3} id="message" />
+              </div>
+            </div>
+          </Form>
         </Card>
       </div>
     </div>

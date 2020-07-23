@@ -33,9 +33,29 @@ const Header = (props: Props) => {
       </Link>
       <Modal modalState={modalState} closeModal={closeModal} formModal={true}>
         <Card cardType="form-modal">
-          <Form modal={true} />
+          <Form
+            modal={true}
+            action="https://liveformhq.com/form/1a021738-357c-47eb-adf0-f446e8b80919"
+          >
+            <div className="form__title">Свяжитесь с нами</div>
+            <div className="form__content">
+              <div className="form__group">
+                <label className="form__label">Как вас зовут ?</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div className="form__group">
+                <label className="form__label">Телефон или email для связи</label>
+                <input type="text" name="contact" id="contact" />
+              </div>
+              <div className="form__group">
+                <label className="form__label">Чем мы можем вам помочь ?</label>
+                <textarea name="message" cols={30} rows={3} id="message" />
+              </div>
+            </div>
+          </Form>
         </Card>
       </Modal>
+
       <HeaderMenu
         menuState={menuState}
         openModal={openModal}

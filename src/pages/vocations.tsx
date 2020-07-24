@@ -4,13 +4,15 @@ import SEO from "../components/seo";
 import VacanciesContainer from "../components/vacancies/vacancies";
 import { graphql } from "gatsby";
 import { toVocationsVM } from "../presenters/vocationsVM";
-import { VacanciesQueryData } from "../entity/pages/vocations";
+import { toContactsPageVM } from "../presenters/contactsVM";
 
-const Vocations = (props: VacanciesQueryData) => {
+const Vocations = (props: any) => {
   const viewModel = toVocationsVM(props.data.vacancies.edges[0].node.data);
 
+  const contactsViewModel = toContactsPageVM(props.data.contacts.edges[0].node.data);
+
   return (
-    <Layout>
+    <Layout contactsViewModel={contactsViewModel}>
       <SEO title="vocations" />
       <VacanciesContainer viewModel={viewModel} />
     </Layout>
@@ -44,6 +46,38 @@ export const VocationsQuery = graphql`
               }
               card_meta_tags {
                 raw
+              }
+            }
+          }
+        }
+      }
+    }
+
+    contacts: allPrismicHomepage {
+      edges {
+        node {
+          data {
+            contacts_title {
+              text
+            }
+            contacts_subtitle {
+              text
+            }
+            contacts_content {
+              list_item_name {
+                text
+              }
+              list_item_content {
+                text
+              }
+            }
+            list_social_links {
+              social_logo {
+                alt
+                url
+              }
+              social_links {
+                url
               }
             }
           }

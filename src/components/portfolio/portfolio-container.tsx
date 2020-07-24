@@ -5,6 +5,7 @@ import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 import Card from "../card/card";
 import { PortfolioVM } from "../../presenters/portfolioVM.ts";
+import { joinCssClasses } from "../../utils/utils";
 
 type Props = {
   viewModel: PortfolioVM;
@@ -29,11 +30,17 @@ const PortfolioContainer = (props: Props) => {
 
       <div className="section__content box">
         <div className="row">
-          {viewModel.map(card => {
+          {viewModel.map((card, index) => {
             const { title, description, logo, link, meta, backgroundColor } = card;
 
             return (
-              <div key={title} className="row__col col-xs-12 col-sm-6 col-md-4">
+              <div
+                key={title}
+                className={joinCssClasses(
+                  "row__col col-xs-12 col-sm-6 col-md-4",
+                  location === "/" && index > 2 ? "col-xs-hide" : ""
+                )}
+              >
                 <Card
                   cardType={"link"}
                   className="card--hover"
@@ -58,10 +65,12 @@ const PortfolioContainer = (props: Props) => {
           })}
         </div>
 
-        <Link className="btn btn--mobile btn--stroke btn--stroke-yellow" to="/portfolio/">
-          <span>Смотреть все проекты</span>
-          <img src={require("../../assets/img/minified-svg/icon-forward.svg")} alt="arrow" />
-        </Link>
+        {location === "/" && (
+          <Link className="btn btn--mobile btn--stroke btn--stroke-yellow" to="/portfolio/">
+            <span>Смотреть все проекты</span>
+            <img src={require("../../assets/img/minified-svg/icon-forward.svg")} alt="arrow" />
+          </Link>
+        )}
       </div>
     </section>
   );

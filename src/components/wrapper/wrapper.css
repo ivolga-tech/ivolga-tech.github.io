@@ -728,3 +728,18 @@ body {
     margin-top: 0;
   }
 }
+
+@media (max-width: 767px) {
+  .col-xs-hide {
+    display: none;
+  }
+  .row--out {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row--variable {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}

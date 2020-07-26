@@ -2,6 +2,8 @@ import React from "react";
 import Card from "../card/card";
 import { VocationsVM } from "../../presenters/vocationsVM";
 import { Typography } from "../typography/typography";
+import { Link } from "gatsby";
+import { useLocation } from "@reach/router";
 
 type Props = {
   viewModel: VocationsVM;
@@ -12,10 +14,7 @@ const VacanciesContainer = (props: Props) => {
     viewModel: { title, description, vacanciesCards },
   } = props;
 
-  const clickHandler = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
-    console.log("click click");
-  };
+  const location = useLocation().pathname;
 
   return (
     <section className="section section--icon-cards">
@@ -28,9 +27,7 @@ const VacanciesContainer = (props: Props) => {
         <div className="section__subtitle">
           <Typography component="span">{description} &mdash;&nbsp;</Typography>
 
-          <a href="" onClick={clickHandler}>
-            пишите
-          </a>
+          <Link to="/contacts/">пишите</Link>
 
           <span>.</span>
         </div>
@@ -79,6 +76,12 @@ const VacanciesContainer = (props: Props) => {
               );
             })}
         </div>
+        {location === "/" && (
+          <Link className="btn btn--mobile btn--stroke btn--stroke-yellow" to="/vocations/">
+            <span>Смотреть все вакансии</span>
+            <img src={require("../../assets/img/minified-svg/icon-forward.svg")} alt="arrow" />
+          </Link>
+        )}
       </div>
     </section>
   );

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../layout/layout";
 import SEO from "../seo";
 import { toVacancyPageVM, VacancyPageQuery } from "../../presenters/vacancy-pageVM";
 import { Typography } from "../typography/typography";
+import Form from "../form/form";
+import Card from "../card/card";
+import { joinCssClasses } from "../../utils/utils";
 
 type Props = {
   data: {
@@ -11,15 +14,37 @@ type Props = {
       uid: string;
       data: VacancyPageQuery;
     };
+    prismicHomepage: any;
   };
 };
 
-const VacancyPage = ({ data: { prismicVacancyPage } }: Props) => {
+const VacancyPage = ({ data: { prismicVacancyPage, prismicHomepage } }: Props) => {
   const { data } = prismicVacancyPage;
+
+  const { contacts_content, list_social_links } = prismicHomepage.data;
+
+  console.log(list_social_links);
 
   const viewModel = toVacancyPageVM(data);
 
   const { logo, title, metaTags, description, vocationsList } = viewModel;
+
+  const [file, setFile] = useState(false);
+
+  const [fileName, setFileName] = useState("Добавить файл");
+
+  const handleFiles = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFileName(event.target.files[0].name);
+    }
+    setFile(true);
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    event.preventDefault();
+    setFileName("Добавить файл");
+    setFile(false);
+  };
 
   return (
     <Layout>
@@ -80,96 +105,130 @@ const VacancyPage = ({ data: { prismicVacancyPage } }: Props) => {
           </div>
         )}
 
-        {/*<div className="row mt-100">*/}
-        {/*  <div className="col-xs-12 col-md-6">*/}
-        {/*    <section className="section section--info">*/}
-        {/*      <div className="section__title">*/}
-        {/*        <h2>Хотите попасть в команду?</h2>*/}
-        {/*      </div>*/}
-        {/*      <div className="section__subtitle">Оставьте свои контактные данные и мы свяжемся с вами.</div>*/}
-        {/*      <div className="section__content">*/}
-        {/*        <ul className="list list--contacts">*/}
-        {/*          <li className="list__item"><span>Телефон:</span>8 920 6432721</li>*/}
-        {/*          <li className="list__item"><span>Email:</span>info@ivolga.tech</li>*/}
-        {/*          <li className="list__item"><span>Адрес:</span>Кострома, ул. Нижняя Дебря 70</li>*/}
-        {/*        </ul>*/}
-        {/*        <ul className="list list--social-links">*/}
-        {/*          <li className="list__item vk">*/}
-        {/*            <a href="/">*/}
-        {/*              /!*<svg className="icon icon--vk" width="18px" height="10px">*!/*/}
-        {/*              /!*  <use xlink:href="#icon-vk"></use>*!/*/}
-        {/*              /!*</svg>*!/*/}
-        {/*            </a>*/}
-        {/*          </li>*/}
-        {/*          <li className="list__item tw">*/}
-        {/*            <a href="/">*/}
-        {/*              /!*<svg className="icon icon--tw" width="17px" height="14px">*!/*/}
-        {/*              /!*  <use xlink:href="#icon-tw"></use>*!/*/}
-        {/*              /!*</svg>*!/*/}
-        {/*            </a>*/}
-        {/*          </li>*/}
-        {/*          <li className="list__item fb-sm">*/}
-        {/*            <a href="/">*/}
-        {/*              /!*<svg className="icon icon--fb-sm" width="9px" height="20px">*!/*/}
-        {/*              /!*  <use xlink:href="#icon-fb-sm"></use>*!/*/}
-        {/*              /!*</svg>*!/*/}
-        {/*            </a>*/}
-        {/*          </li>*/}
-        {/*        </ul>*/}
-        {/*      </div>*/}
-        {/*    </section>*/}
-        {/*  </div>*/}
-        {/*  <div className="col-xs-12 col-md-6">*/}
-        {/*    <div className="card card--form">*/}
-        {/*      <form className="form form--contact-us" action="/" method="POST" encType="multipart/form-data">*/}
-        {/*        <div className="form__title">Свяжитесь с нами</div>*/}
-        {/*        <div className="form__content">*/}
-        {/*          <div className="form__group">*/}
-        {/*            <label className="form__label" htmlFor="name">Имя</label>*/}
-        {/*            <input id="name" type="text" name="name" required />*/}
-        {/*          </div>*/}
-        {/*          <div className="form__group">*/}
-        {/*            <label className="form__label" htmlFor="city">Город</label>*/}
-        {/*            <input id="city" type="text" name="city" />*/}
-        {/*          </div>*/}
-        {/*          <div className="form__group">*/}
-        {/*            <label className="form__label" htmlFor="email">Email</label>*/}
-        {/*            <input id="email" type="email" name="email" />*/}
-        {/*          </div>*/}
-        {/*          <div className="form__group">*/}
-        {/*            <label className="form__label" htmlFor="phone">Телефон</label>*/}
-        {/*            <input id="phone" type="text" name="phone" />*/}
-        {/*          </div>*/}
-        {/*          <div className="form__group">*/}
-        {/*            <label className="form__label" htmlFor="info">О себе</label>*/}
-        {/*            <textarea id="info" name="info" cols={30} rows={3} />*/}
-        {/*          </div>*/}
-        {/*          <div className="form__file">*/}
-        {/*            <input className="inputfile no-file" id="file-2" type="file" name="file-2">*/}
-        {/*              <div className="label">*/}
-        {/*                <div className="label-icon">*/}
-        {/*                  /!*<svg className="icon icon--file" width="24px" height="24px">*!/*/}
-        {/*                  /!*  <use xlink:href="#file"></use>*!/*/}
-        {/*                  /!*</svg>*!/*/}
+        <div className="row mt-100">
+          <div className="col-xs-12 col-md-6">
+            <section className="section section--info">
+              <div className="section__title">
+                <h2>Хотите попасть в команду?</h2>
+              </div>
+              <div className="section__subtitle">
+                Оставьте свои контактные данные и мы свяжемся с вами.
+              </div>
+              <div className="section__content">
+                <ul className="list list--contacts">
+                  {contacts_content.map(
+                    (contact: {
+                      list_item_name: { text: string };
+                      list_item_content: { text: string };
+                    }) => {
+                      const { list_item_name, list_item_content } = contact;
+                      return (
+                        <li key={list_item_name.text} className="list__item">
+                          <Typography component="span">{list_item_name.text}: </Typography>{" "}
+                          {list_item_content.text}
+                        </li>
+                      );
+                    }
+                  )}
+                </ul>
+                <ul className="list list--social-links">
+                  {list_social_links.map(
+                    (socialLink: {
+                      social_logo: { url: string; alt: string };
+                      social_links: { url: string };
+                    }) => {
+                      const { social_logo, social_links } = socialLink;
+                      return (
+                        <li key={social_links.url} className="list__item">
+                          <a href={social_links.url}>
+                            <img
+                              className="social-logo"
+                              src={social_logo.url}
+                              alt={social_logo.alt}
+                            />
+                          </a>
+                        </li>
+                      );
+                    }
+                  )}
+                </ul>
+              </div>
+            </section>
+          </div>
 
-        {/*                </div>*/}
-        {/*                <label htmlFor="file-2"><span>Добавить файл</span>*/}
-        {/*                </label>*/}
-        {/*                <div className="label-remove">*/}
-        {/*                  /!*<svg className="icon icon--remove" width="10px" height="10px">*!/*/}
-        {/*                  /!*  <use xlink:href="#icon-remove"></use>*!/*/}
-        {/*                  /!*</svg>*!/*/}
-        {/*                </div>*/}
-        {/*              </div>*/}
-        {/*          </div>*/}
-        {/*        </div>*/}
-        {/*        <div className="form__footer">*/}
-        {/*          <button className="btn btn--lg btn--yellow" id="send-message" type="submit">Отправить</button>*/}
-        {/*        </div>*/}
-        {/*      </form>*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
+          <div className="col-xs-12 col-md-6">
+            <Card cardType="form">
+              <Form action="https://liveformhq.com/form/da53058e-d687-40e4-864d-3a4423e96f2a">
+                <div className="form__title">Свяжитесь с нами</div>
+                <div className="form__content">
+                  <div className="form__group">
+                    <label className="form__label" htmlFor="name">
+                      Имя
+                    </label>
+                    <input id="name" type="text" name="name" required />
+                  </div>
+                  <div className="form__group">
+                    <label className="form__label" htmlFor="city">
+                      Город
+                    </label>
+                    <input id="city" type="text" name="city" />
+                  </div>
+                  <div className="form__group">
+                    <label className="form__label" htmlFor="email">
+                      Email
+                    </label>
+                    <input id="email" type="email" name="email" />
+                  </div>
+                  <div className="form__group">
+                    <label className="form__label" htmlFor="phone">
+                      Телефон
+                    </label>
+                    <input id="phone" type="tel" name="phone" />
+                  </div>
+                  <div className="form__group">
+                    <label className="form__label" htmlFor="info">
+                      О себе
+                    </label>
+                    <textarea id="info" name="info" cols={30} rows={3} />
+                  </div>
+
+                  <div className="form__file">
+                    <input
+                      className={joinCssClasses("inputfile", !file ? "no-file" : "")}
+                      id="file-2"
+                      type="file"
+                      name="resume"
+                      onChange={handleFiles}
+                    />
+                    <div className="label">
+                      <div className="label-icon">
+                        <img
+                          className="icon icon--file"
+                          src={require("../../assets/img/minified-svg/file.svg")}
+                          width="24px"
+                          height="24px"
+                          alt="file"
+                        />
+                      </div>
+                      <label htmlFor="file-2">
+                        <span>{fileName}</span>
+                      </label>
+                      <div className="label-remove" onClick={handleClick}>
+                        <img
+                          className="icon icon--remove"
+                          src={require("../../assets/img/minified-svg/icon-remove.svg")}
+                          width="10px"
+                          height="10px"
+                          alt="remove"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Form>
+            </Card>
+          </div>
+        </div>
       </div>
     </Layout>
   );
@@ -203,6 +262,28 @@ export const pageQuery = graphql`
           }
           list_content {
             text
+          }
+        }
+      }
+    }
+
+    prismicHomepage {
+      data {
+        contacts_content {
+          list_item_content {
+            text
+          }
+          list_item_name {
+            text
+          }
+        }
+        list_social_links {
+          social_logo {
+            alt
+            url
+          }
+          social_links {
+            url
           }
         }
       }

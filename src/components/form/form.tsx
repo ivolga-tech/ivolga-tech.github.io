@@ -41,7 +41,12 @@ const Form = (props: Props) => {
       </span>
 
       <div className="form__footer">
-        <button className="btn btn--lg btn--yellow" type="submit" disabled={submit}>
+        <button
+          className="btn btn--lg btn--yellow"
+          id="form_submit"
+          type="submit"
+          disabled={submit}
+        >
           Отправить
         </button>
       </div>

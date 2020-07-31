@@ -1,3 +1,5 @@
+import { Image } from "../entity/image";
+
 type ListItem = {
   list_item_name: {
     text: string;
@@ -13,6 +15,7 @@ type SocialLink = {
   };
   social_logo: {
     url: string;
+    alt: string;
   };
 };
 
@@ -33,7 +36,7 @@ type ContactsItem = {
 };
 
 type SocialLinksItem = {
-  logo: string;
+  logo: Image;
   link: string;
 };
 
@@ -48,21 +51,27 @@ export const toContactsPageVM = (contacts: ContactsData): ContactsPageVM => {
   const { contacts_title, contacts_subtitle, contacts_content, list_social_links } = contacts;
 
   return {
-    title: contacts_title.text,
-    subtitle: contacts_subtitle.text,
-    contacts: contacts_content.map(contact => {
-      const { list_item_name, list_item_content } = contact;
-      return {
-        name: list_item_name.text,
-        content: list_item_content.text,
-      };
-    }),
-    socialLinks: list_social_links.map(socialLink => {
-      const { social_links, social_logo } = socialLink;
-      return {
-        logo: social_logo.url,
-        link: social_links.url,
-      };
-    }),
+    title: contacts_title ? contacts_title.text : "",
+    subtitle: contacts_subtitle ? contacts_subtitle.text : "",
+    contacts:
+      contacts_content.length > 0 && contacts_content[0].list_item_name
+        ? contacts_content.map(contact => {
+            const { list_item_name, list_item_content } = contact;
+            return {
+              name: list_item_name.text,
+              content: list_item_content.text,
+            };
+          })
+        : [],
+    socialLinks:
+      list_social_links.length > 0 && list_social_links[0].social_links
+        ? list_social_links.map(socialLink => {
+            const { social_links, social_logo } = socialLink;
+            return {
+              logo: social_logo,
+              link: social_links.url,
+            };
+          })
+        : [],
   };
 };

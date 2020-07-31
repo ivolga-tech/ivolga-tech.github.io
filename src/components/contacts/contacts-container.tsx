@@ -42,7 +42,7 @@ const ContactsContainer = (props: Props) => {
                 return (
                   <li key={link} className="list__item">
                     <a href={link}>
-                      <img className="social-logo" src={logo} alt="social link logo" />
+                      <img className="social-logo" src={logo.url} alt={logo.alt} />
                     </a>
                   </li>
                 );

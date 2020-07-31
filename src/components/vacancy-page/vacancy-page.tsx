@@ -7,6 +7,7 @@ import { Typography } from "../typography/typography";
 import Form from "../form/form";
 import Card from "../card/card";
 import { joinCssClasses } from "../../utils/utils";
+import { ContactsData, toContactsPageVM } from "../../presenters/contactsVM";
 
 type Props = {
   data: {
@@ -14,20 +15,22 @@ type Props = {
       uid: string;
       data: VacancyPageQuery;
     };
-    prismicHomepage: any;
+    prismicHomepage: {
+      data: ContactsData;
+    };
   };
 };
 
 const VacancyPage = ({ data: { prismicVacancyPage, prismicHomepage } }: Props) => {
   const { data } = prismicVacancyPage;
 
-  const { contacts_content, list_social_links } = prismicHomepage.data;
-
-  console.log(list_social_links);
-
   const viewModel = toVacancyPageVM(data);
 
+  const contactsViewModel = toContactsPageVM(prismicHomepage.data);
+
   const { logo, title, metaTags, description, vocationsList } = viewModel;
+
+  const { contacts, socialLinks } = contactsViewModel;
 
   const [file, setFile] = useState(false);
 
@@ -116,41 +119,28 @@ const VacancyPage = ({ data: { prismicVacancyPage, prismicHomepage } }: Props) =
               </div>
               <div className="section__content">
                 <ul className="list list--contacts">
-                  {contacts_content.map(
-                    (contact: {
-                      list_item_name: { text: string };
-                      list_item_content: { text: string };
-                    }) => {
-                      const { list_item_name, list_item_content } = contact;
+                  {contacts.length > 0 &&
+                    contacts.map(contact => {
+                      const { name, content } = contact;
                       return (
-                        <li key={list_item_name.text} className="list__item">
-                          <Typography component="span">{list_item_name.text}: </Typography>{" "}
-                          {list_item_content.text}
+                        <li key={name} className="list__item">
+                          <Typography component="span">{name}: </Typography> {content}
                         </li>
                       );
-                    }
-                  )}
+                    })}
                 </ul>
                 <ul className="list list--social-links">
-                  {list_social_links.map(
-                    (socialLink: {
-                      social_logo: { url: string; alt: string };
-                      social_links: { url: string };
-                    }) => {
-                      const { social_logo, social_links } = socialLink;
+                  {socialLinks.length > 0 &&
+                    socialLinks.map(socialLink => {
+                      const { logo, link } = socialLink;
                       return (
-                        <li key={social_links.url} className="list__item">
-                          <a href={social_links.url}>
-                            <img
-                              className="social-logo"
-                              src={social_logo.url}
-                              alt={social_logo.alt}
-                            />
+                        <li key={link} className="list__item">
+                          <a href={link}>
+                            <img className="social-logo" src={logo.url} alt={logo.alt} />
                           </a>
                         </li>
                       );
-                    }
-                  )}
+                    })}
                 </ul>
               </div>
             </section>

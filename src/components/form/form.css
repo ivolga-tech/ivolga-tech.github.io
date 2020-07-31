@@ -209,6 +209,18 @@
   transition: ease-in-out 0.3s;
 }
 
+@media (min-width: 100px) {
+  .form--contact-us {
+    width: auto;
+  }
+}
+
+@media (min-width: 320px) {
+  .form--contact-us {
+    width: 300px;
+  }
+}
+
 @media (min-width: 376px) {
   .form--contact-us {
     width: 400px;

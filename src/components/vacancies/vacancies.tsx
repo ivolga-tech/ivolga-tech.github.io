@@ -40,7 +40,7 @@ const VacanciesContainer = (props: Props) => {
 
               return (
                 <div key={title} className="row__col col-xs-12 col-sm-6 col-md-4">
-                  <Card cardType="link" className="" to={`/vocations/${link}`} title={title}>
+                  <Card cardType="link" className="" to={`/vocations/${link}`.toLowerCase()} title={title}>
                     <div className="card--icon">
                       {logo.url && (
                         <div className="card__img">
